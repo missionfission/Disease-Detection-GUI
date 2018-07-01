@@ -9,7 +9,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtMultimedia
 import sys
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import sys
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -73,7 +73,7 @@ class RecordVideo():
             img = get_qimage(frame) 
             pix = QtGui.QPixmap.fromImage(img)
             ui.video_frame.setPixmap(pix)
-            inference_malaria() 
+            inference() 
 
         def start_video(self):
             self.camera = cv2.VideoCapture(1)
@@ -116,12 +116,15 @@ def capture():
     ui.textBrowser.append('Images are captured')
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+
+app = QtWidgets.QApplication(sys.argv)
+MainWindow = QtWidgets.QMainWindow()
+cap=RecordVideo()
+cap.flag=-1
+ui = Ui_MainWindow()
+ui.setupUi(MainWindow)
+MainWindow.setWindowTitle("Visible Iris Recognition")
+MainWindow.show()
+sys.exit(app.exec_())
 
