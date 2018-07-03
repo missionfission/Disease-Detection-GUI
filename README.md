@@ -1,4 +1,4 @@
-# Working Software for Real Time Detection of Malaria, Tuberculosis and Intestinal Parasites on Embedded Platforms 
+# Working Software for Real Time Detection of Malaria, Tuberculosis and Intestinal Parasites 
 
 1. Model Files are Added
 
